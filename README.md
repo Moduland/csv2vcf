@@ -36,7 +36,7 @@ By [Moduland Co](http://www.moduland.ir)
 ## Input File Format
 
 <div align="center">
-<img src="http://moduland.github.io/csv2vcf/images/csv.jpg" height=240px width=320px>
+<img src="http://moduland.github.io/csv2vcf/images/csv.png">
 </div>					
 
  												
