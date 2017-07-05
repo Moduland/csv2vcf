@@ -33,7 +33,7 @@ def time_convert(input_data):
 def VCF_creator(first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile):
     if "VCF_CONVERT" not in os.listdir():
         os.mkdir("VCF_CONVERT")
-    file=open(os.path.join("VCF_CONVERT",last_name+"_"+first_name+".vcf"),"a")
+    file=open(os.path.join("VCF_CONVERT",last_name+"_"+first_name+".vcf"),"w")
     file.write("BEGIN:VCARD\n")
     file.write("VERSION:3.0\n")
     file.write("N:"+last_name+";"+first_name+";;;"+"\n")
@@ -50,6 +50,7 @@ def csv_reader(file_name):
     try:
         file=open(file_name,"r")
         unknown_index=0
+        vcf_counter=0
         for index,line in enumerate(file):
             if index>0:
                 stripped_line=line.strip()
@@ -63,6 +64,9 @@ def csv_reader(file_name):
                         VCF_creator("Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7])
                     else:
                         VCF_creator(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7])
+                    vcf_counter+=1
+        return vcf_counter
+
     except Exception as e:
         print("[Error] In Reading CSV File")
 
