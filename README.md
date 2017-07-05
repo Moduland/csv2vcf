@@ -2,6 +2,13 @@
 <img src="http://moduland.github.io/csv2vcf/images/logo.jpg" height=240px width=320px>
 </div>
 
+<hr/>
+<div align="center">
+	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/quality-score.png?b=master"></a>
+	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/build.png?b=master"></a>
+
+</div>
+
 ----------
 
 
