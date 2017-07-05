@@ -31,7 +31,11 @@ By [Moduland Co](http://www.moduland.ir)
 
 - Enter contacts in ```contact.csv``` (comma separated)
 - Run csv2vcf ```python3 -m csv2vcf``` or ```python -m csv2vcf``` on Mac,Linux or Windows
-- Result in ```VCF_CONVERT``` folder
+- Result in ```VCF_CONVERT``` folder			
+
+<div align="center">
+<img src="http://moduland.github.io/csv2vcf/images/usage.gif">
+</div>					
 
 ## Input File Format
 
@@ -40,6 +44,20 @@ By [Moduland Co](http://www.moduland.ir)
 </div>					
 
  												
+## TODO		
+
+- [ ] Phone Number
+  - [x] Mobile
+  - [x] Home
+  - [x] Work
+  - [ ] Multi
+- [ ] Email
+  - [x] Mobile
+  - [x] Home
+  - [x] Work
+  - [ ] Multi
+- [ ] Address
+- [ ] URL				
 
 ## Issues & Bug Reports			
 
