@@ -28,24 +28,44 @@ def time_convert(input_data):
     input_hour=int(input_hour-input_day*24)
     return zero_insert(str(input_day))+" days, "+zero_insert(str(input_hour))+" hour, "+zero_insert(str(input_minute))+" minutes, "+zero_insert(str(input_sec))+" seconds"
 
+def VCF_init(file):
+    file.write("BEGIN:VCARD\n")
+    file.write("VERSION:3.0\n")
+
+def VCF_name(file,first_name,last_name):
+    file.write("N:"+last_name+";"+first_name+";;;"+"\n")
+    file.write("FN:" + first_name+" "+last_name + "\n")
+
+def VCF_phone(file,tel_mobile,tel_home,tel_work):
+    file.write("TEL;type=CELL:" + tel_mobile + "\n")
+    file.write("TEL;type=HOME:" + tel_home + "\n")
+    file.write("TEL;type=WORK:" + tel_work + "\n")
+
+def VCF_email(file,email_home,email_mobile,email_work):
+    file.write("EMAIL;type=INTERNET;type=WORK;type=pref:" + email_work + "\n")
+    file.write("EMAIL;type=INTERNET;type=HOME;type=pref:" + email_home + "\n")
+    file.write("EMAIL;type=INTERNET;type=CELL;type=pref:" + email_mobile + "\n")
 
 
-def VCF_creator(first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile):
+def VCF_adr(file,adr_work,adr_home):
+    file.write('item1.ADR;type=WORK:;; ' + adr_work + "\n")
+    file.write('item2.ADR;type=HOME;type=pref:;; ' + adr_home + "\n")
+
+def VCF_website(file,website_url):
+    file.write('item3.URL;type=pref:' + website_url + "\n")
+    file.write("END:VCARD")
+    file.close()
+def VCF_creator(first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile,adr_work,adr_home,website_url):
     if "VCF_CONVERT" not in os.listdir():
         os.mkdir("VCF_CONVERT")
     file=open(os.path.join("VCF_CONVERT",last_name+"_"+first_name+".vcf"),"w")
-    file.write("BEGIN:VCARD\n")
-    file.write("VERSION:3.0\n")
-    file.write("N:"+last_name+";"+first_name+";;;"+"\n")
-    file.write("FN:" + first_name+" "+last_name + "\n")
-    file.write("TEL;type=CELL:"+tel_mobile+"\n")
-    file.write("TEL;type=HOME:" + tel_home + "\n")
-    file.write("TEL;type=WORK:" + tel_work + "\n")
-    file.write("EMAIL;type=INTERNET;type=WORK;type=pref:"+email_work+"\n")
-    file.write("EMAIL;type=INTERNET;type=HOME;type=pref:" + email_home + "\n")
-    file.write("EMAIL;type=INTERNET;type=CELL;type=pref:" + email_mobile + "\n")
-    file.write("END:VCARD")
-    file.close()
+    VCF_init(file)
+    VCF_name(file,first_name,last_name)
+    VCF_phone(file,tel_mobile,tel_home,tel_work)
+    VCF_email(file,email_home,email_mobile,email_work)
+    VCF_adr(file,adr_work,adr_home)
+    VCF_website(file,website_url)
+
 def csv_reader(file_name):
     try:
         file=open(file_name,"r")
@@ -55,15 +75,15 @@ def csv_reader(file_name):
             if index>0:
                 stripped_line=line.strip()
                 temp=stripped_line.split(",")
-                if len(temp)>8:
+                if len(temp)>11:
                     print("[Warning] CSV File Line "+str(index)+" Bad Format")
                     continue
                 else:
                     if len(temp[0])==0 and len(temp[1])==0:
                         unknown_index+=1
-                        VCF_creator("Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7])
+                        VCF_creator("Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
                     else:
-                        VCF_creator(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7])
+                        VCF_creator(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
                     vcf_counter+=1
         return vcf_counter
 

@@ -63,8 +63,8 @@ By [Moduland Co](http://www.moduland.ir)
   - [x] Home
   - [x] Work
   - [ ] Multi
-- [ ] Address
-- [ ] URL				
+- [x] Address
+- [x] URL				
 
 ## Issues & Bug Reports			
 
