@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
+from tkinter.filedialog import askopenfilename
+from tkinter import messagebox
 
 def zero_insert(input_string):
     '''
@@ -55,10 +57,15 @@ def VCF_website(file,website_url):
     file.write('item3.URL;type=pref:' + website_url + "\n")
     file.write("END:VCARD")
     file.close()
-def VCF_creator(first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile,adr_work,adr_home,website_url):
-    if "VCF_CONVERT" not in os.listdir():
-        os.mkdir("VCF_CONVERT")
-    file=open(os.path.join("VCF_CONVERT",last_name+"_"+first_name+".vcf"),"w")
+
+def VCF_Folder(filename):
+    filename_split=filename.split("/")[-1].split(".")[0]
+    if "VCF_CONVERT_"+filename_split not in os.listdir():
+        os.mkdir("VCF_CONVERT_"+filename_split)
+    return "VCF_CONVERT_"+filename_split
+
+def VCF_creator(folder_name,first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile,adr_work,adr_home,website_url):
+    file=open(os.path.join(folder_name,last_name+"_"+first_name+".vcf"),"w")
     VCF_init(file)
     VCF_name(file,first_name,last_name)
     VCF_phone(file,tel_mobile,tel_home,tel_work)
@@ -71,6 +78,7 @@ def csv_reader(file_name):
         file=open(file_name,"r")
         unknown_index=0
         vcf_counter=0
+        foldername=VCF_Folder(file_name)
         for index,line in enumerate(file):
             if index>0:
                 stripped_line=line.strip()
@@ -81,12 +89,15 @@ def csv_reader(file_name):
                 else:
                     if len(temp[0])==0 and len(temp[1])==0:
                         unknown_index+=1
-                        VCF_creator("Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
+                        VCF_creator(foldername,"Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
                     else:
-                        VCF_creator(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
+                        VCF_creator(foldername,temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
                     vcf_counter+=1
         return vcf_counter
 
+    except FileNotFoundError:
+        print("[Warning] Please Open CSV File")
     except Exception as e:
+        messagebox.showinfo("CSV2VCF", "Error In Reading CSV File")
         print("[Error] In Reading CSV File")
 
