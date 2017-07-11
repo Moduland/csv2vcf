@@ -6,6 +6,7 @@
 <div align="center">
 	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/quality-score.png?b=master"></a>
 	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/build.png?b=master"></a>
+	<a href="https://requires.io/github/Moduland/csv2vcf/requirements/?branch=master"><img src="https://requires.io/github/Moduland/csv2vcf/requirements.svg?branch=master" alt="Requirements Status" /></a>
 
 </div>
 
