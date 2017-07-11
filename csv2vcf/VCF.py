@@ -59,10 +59,12 @@ def VCF_website(file,website_url):
     file.close()
 
 def VCF_Folder(filename):
+    folder_adr=os.path.dirname(filename)
     filename_split=filename.split("/")[-1].split(".")[0]
-    if "VCF_CONVERT_"+filename_split not in os.listdir():
-        os.mkdir("VCF_CONVERT_"+filename_split)
-    return "VCF_CONVERT_"+filename_split
+    VCF_folder_adr = os.path.join(folder_adr, "VCF_CONVERT_" + filename_split)
+    if "VCF_CONVERT_"+filename_split not in os.listdir(folder_adr):
+        os.mkdir(VCF_folder_adr)
+    return VCF_folder_adr
 
 def VCF_creator(folder_name,first_name,last_name,tel_mobile,tel_home,tel_work,email_home,email_work,email_mobile,adr_work,adr_home,website_url):
     file=open(os.path.join(folder_name,last_name+"_"+first_name+".vcf"),"w")
@@ -98,6 +100,6 @@ def csv_reader(file_name):
     except FileNotFoundError:
         print("[Warning] Please Open CSV File")
     except Exception as e:
-        messagebox.showinfo("CSV2VCF", "Error In Reading CSV File")
-        print("[Error] In Reading CSV File")
+        messagebox.showinfo("CSV2VCF", "Error In Reading Input File")
+        print("[Error] In Reading Input File")
 

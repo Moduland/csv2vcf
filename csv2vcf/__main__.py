@@ -3,6 +3,7 @@ import time
 from VCF import *
 from tkinter.filedialog import askopenfilename
 from tkinter import *
+import os
 
 filename=""
 global filename
@@ -12,19 +13,25 @@ global filename
 
 if __name__=="__main__":
     root = Tk()
-    root.overrideredirect(1)
+    root.overrideredirect(True)
     w = 400  # width for the Tk root
-    h = 100  # height for the Tk root
+    h = 430  # height for the Tk root
     ws = root.winfo_screenwidth()  # width of the screen
     hs = root.winfo_screenheight()  # height of the screen
     x = (ws / 2) - (w / 2)
     y = (hs / 2) - (h / 2)
     root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+    def open_folder(address):
+        try:
+            os.system("start "+address)
+        except Exception as e:
+            print("Error In Opening Final File")
     def openfile():
         global filename
         filename = askopenfilename(filetypes=(("CSV File", "*.csv")
                                               , ("Text File", "*.txt")
                                               ))
+        folder=os.path.dirname(filename)
         time_1 = time.perf_counter()
         counter = csv_reader(filename)
         time_2 = time.perf_counter()
@@ -32,11 +39,17 @@ if __name__=="__main__":
         if counter!=None:
             print(str(counter) + " VCF File Generated In " + time_convert(delta_time))
             messagebox.showinfo("CSV2VCF",str(counter) + " VCF File Generated In " + time_convert(delta_time))
+            open_folder(folder)
         return filename
+
+    def exit():
+        root.quit()
     root.wm_title("CSV2VCF")
-    b = Button(root, text="Open File", bg="gray40", fg="blue", font=("arial", 22, "bold"),width=10,height=5, command=openfile).pack(
-        padx="10", pady="10")
-    i = Button(root, text="Exit", bg="gray40", fg="blue", font=("arial", 22, "bold"), width=10, height=5,
-               command=openfile).pack(
-        padx="10", pady="10")
+    label_1=Label(root,text="CSV2VCF",font=("arial", 30, "bold")).pack()
+    label_2=Label(root,text="By Moduland",font=("arial", 22, "bold")).pack()
+    b = Button(root, text="Open File", bg="gray40", fg="blue", font=("arial", 22, "bold"),width=10,height=3, command=openfile).pack(
+        padx="12", pady="12")
+    i = Button(root, text="Exit", bg="gray40", fg="blue", font=("arial", 22, "bold"), width=10, height=3,
+               command=exit).pack(
+        padx="12", pady="12")
     root.mainloop()
