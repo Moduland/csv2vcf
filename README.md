@@ -5,6 +5,7 @@
 <hr/>
 <div align="center">
 	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/quality-score.png?b=master"></a>
+	<a href="https://www.codacy.com/app/Sepand-HaghighiOrganization/csv2vcf?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Moduland/csv2vcf&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/027746c2e5b24390aed377c6e5c678ba"/></a>
 	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/build.png?b=master"></a>
 	<a href="https://requires.io/github/Moduland/csv2vcf/requirements/?branch=master"><img src="https://requires.io/github/Moduland/csv2vcf/requirements.svg?branch=master" alt="Requirements Status" /></a>
 
