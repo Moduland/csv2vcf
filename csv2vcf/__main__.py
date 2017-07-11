@@ -38,7 +38,7 @@ if __name__=="__main__":
             open_folder(folder)
         return filename
 
-    def exit():
+    def tkinter_exit():
         root.quit()
     root.wm_title("CSV2VCF")
     label_1=Label(root,text="CSV2VCF",font=("arial", 30, "bold")).pack()
@@ -46,6 +46,6 @@ if __name__=="__main__":
     b = Button(root, text="Open File", bg="gray40", fg="blue", font=("arial", 22, "bold"),width=10,height=3, command=openfile).pack(
         padx="12", pady="12")
     i = Button(root, text="Exit", bg="gray40", fg="blue", font=("arial", 22, "bold"), width=10, height=3,
-               command=exit).pack(
+               command=tkinter_exit).pack(
         padx="12", pady="12")
     root.mainloop()
