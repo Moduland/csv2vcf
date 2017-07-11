@@ -36,8 +36,9 @@ By [Moduland Co](http://www.moduland.ir)
 
 ## Usage					
 
-- Enter contacts in ```contact.csv``` (comma separated)
+- Enter contacts in ```.csv``` file (comma separated)
 - Run csv2vcf ```python3 -m csv2vcf``` or ```python -m csv2vcf``` on Mac,Linux or Windows
+- Open your csv file in application
 - Result in ```VCF_CONVERT``` folder			
 
 <div align="center">
@@ -64,7 +65,8 @@ By [Moduland Co](http://www.moduland.ir)
   - [x] Work
   - [ ] Multi
 - [x] Address
-- [x] URL				
+- [x] URL
+- [x] GUI				
 
 ## Issues & Bug Reports			
 
