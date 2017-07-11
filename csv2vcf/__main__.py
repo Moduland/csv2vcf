@@ -6,10 +6,6 @@ from tkinter import *
 import os
 
 filename=""
-global filename
-
-
-
 
 if __name__=="__main__":
     root = Tk()
