@@ -20,7 +20,7 @@ if __name__=="__main__":
     def open_folder(address):
         try:
             os.system("start "+address)
-        except Exception as e:
+        except Exception:
             print("Error In Opening Final File")
     def openfile():
         global filename

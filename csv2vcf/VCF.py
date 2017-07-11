@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
 
 name_dict={}
@@ -120,7 +119,7 @@ def csv_reader(file_name):
 
     except FileNotFoundError:
         print("[Warning] Please Open CSV File")
-    except Exception as e:
+    except Exception:
         messagebox.showinfo("CSV2VCF", "Error In Reading Input File")
         print("[Error] In Reading Input File")
 
