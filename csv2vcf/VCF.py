@@ -3,6 +3,8 @@ import os
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox
 
+name_dict={}
+unknown_index=0
 def zero_insert(input_string):
     '''
     This function get a string as input if input is one digit add a zero
@@ -75,12 +77,34 @@ def VCF_creator(folder_name,first_name,last_name,tel_mobile,tel_home,tel_work,em
     VCF_adr(file,adr_work,adr_home)
     VCF_website(file,website_url)
 
+def name_dict_update(name):
+    global name_dict
+    if name not in name_dict.keys():
+        name_dict[name] = 0
+    else:
+        name_dict[name] = name_dict[name] + 1
+
+def VCF_write(temp,name_dict,foldername):
+    name = temp[0] + "," + temp[1]
+    name_dict_update(name)
+    global unknown_index
+    if len(temp[0]) == 0 and len(temp[1]) == 0:
+        unknown_index += 1
+        VCF_creator(foldername, str(unknown_index),"Unknown ", temp[2], temp[3], temp[4], temp[5], temp[6], temp[7],
+                    temp[8], temp[9], temp[10])
+    else:
+        if name_dict[name] != 0:
+            VCF_creator(foldername, temp[0] + "_" + str(name_dict[name]), temp[1], temp[2], temp[3], temp[4], temp[5],
+                        temp[6], temp[7], temp[8], temp[9], temp[10])
+        else:
+            VCF_creator(foldername, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8],
+                        temp[9], temp[10])
 def csv_reader(file_name):
     try:
         file=open(file_name,"r")
-        unknown_index=0
+
         vcf_counter=0
-        name_dict={}
+
         foldername=VCF_Folder(file_name)
         for index,line in enumerate(file):
             if index>0:
@@ -90,19 +114,7 @@ def csv_reader(file_name):
                     print("[Warning] CSV File Line "+str(index)+" Bad Format")
                     continue
                 else:
-                    name=temp[0]+","+temp[1]
-                    if name not in name_dict.keys():
-                        name_dict[name]=0
-                    else:
-                        name_dict[name]=name_dict[name]+1
-                    if len(temp[0])==0 and len(temp[1])==0:
-                        unknown_index+=1
-                        VCF_creator(foldername,"Unknown ",str(unknown_index),temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
-                    else:
-                        if name_dict[name]!=0:
-                            VCF_creator(foldername,temp[0]+"_"+str(name_dict[name]),temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[10])
-                        else:
-                            VCF_creator(foldername, temp[0], temp[1], temp[2], temp[3],temp[4], temp[5], temp[6], temp[7], temp[8], temp[9], temp[10])
+                    VCF_write(temp,name_dict,foldername)
                     vcf_counter+=1
         return vcf_counter
 
