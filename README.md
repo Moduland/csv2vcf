@@ -35,6 +35,12 @@ By [Moduland Co](http://www.moduland.ir)
 - Download [Version 0.2](https://github.com/moduland/csv2vcf/archive/v0.2.zip) or [Latest Source ](https://github.com/Moduland/csv2vcf/archive/master.zip)
 
 - `python3 setup.py install` or `python setup.py install`				
+
+### PyPI
+
+
+- Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
+- `pip install csv2vcf` or `pip3 install csv2vcf`							
 			
 
 ## Usage					
