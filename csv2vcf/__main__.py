@@ -18,11 +18,21 @@ if __name__=="__main__":
     y = (hs / 2) - (h / 2)
     root.geometry('%dx%d+%d+%d' % (w, h, x, y))
     def open_folder(address):
+        '''
+        This function open file directory
+        :param address: address of file
+        :type address:str
+        :return: None
+        '''
         try:
             os.system("start "+address)
         except Exception:
             print("Error In Opening Final File")
     def openfile():
+        '''
+        This function ask for opening file with tkinter
+        :return: filename as str
+        '''
         global filename
         filename = askopenfilename(filetypes=(("CSV File", "*.csv")
                                               , ("Text File", "*.txt")
@@ -39,6 +49,10 @@ if __name__=="__main__":
         return filename
 
     def tkinter_exit():
+        '''
+        This function quit tkinter windows
+        :return: None
+        '''
         root.quit()
     root.wm_title("CSV2VCF")
     label_1=Label(root,text="CSV2VCF",font=("arial", 30, "bold")).pack()
