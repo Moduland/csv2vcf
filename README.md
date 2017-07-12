@@ -31,7 +31,7 @@ By [Moduland Co](http://www.moduland.ir)
 
 ## Installation
 ### Source Code
-- Download [Version 0.1](https://github.com/moduland/csv2vcf/archive/v0.1.zip) or [Latest Source ](https://github.com/Moduland/csv2vcf/archive/master.zip)
+- Download [Version 0.2](https://github.com/moduland/csv2vcf/archive/v0.2.zip) or [Latest Source ](https://github.com/Moduland/csv2vcf/archive/master.zip)
 
 - `python3 setup.py install` or `python setup.py install`				
 			
