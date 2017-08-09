@@ -6,7 +6,8 @@ python:
   - 3.5
 
 install:
-  - apt-get install python-tk
+  - sudo apt-get update
+  - sudo apt-get install python-tk
   - python3 setup.py install
 
 script:
