@@ -120,7 +120,7 @@ def VCF_Folder(filename):
     :return: VCF_folder_adr as str
     '''
     folder_adr=os.path.dirname(filename)
-    filename_split=filename.split("/")[-1].split(".")[0]
+    filename_split=os.path.basename(filename).split(".")[0]
     VCF_folder_adr = os.path.join(folder_adr, "VCF_CONVERT_" + filename_split)
     if "VCF_CONVERT_"+filename_split not in os.listdir(folder_adr):
         os.mkdir(VCF_folder_adr)
@@ -189,7 +189,7 @@ def VCF_write(temp,name_dict,foldername):
         else:
             VCF_creator(foldername, temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8],
                         temp[9], temp[10])
-def csv_reader(file_name):
+def csv_reader(file_name,GUI=False):
     '''
     This function read input csv file and parse it
     :param file_name: file name or address of file
@@ -197,10 +197,9 @@ def csv_reader(file_name):
     :return: vcf_counter as integer
     '''
     try:
+        file_name=os.path.join(os.getcwd(),file_name)
         file=open(file_name,"r")
-
         vcf_counter=0
-
         foldername=VCF_Folder(file_name)
         for index,line in enumerate(file):
             if index>0:
@@ -216,7 +215,9 @@ def csv_reader(file_name):
 
     except FileNotFoundError:
         print("[Warning] Please Open CSV File")
-    except Exception:
-        messagebox.showinfo("CSV2VCF", "Error In Reading Input File")
+    except Exception as e:
+        if GUI==True:
+            messagebox.showinfo("CSV2VCF", "Error In Reading Input File")
+        print(str(e))
         print("[Error] In Reading Input File")
 
