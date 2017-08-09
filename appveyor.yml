@@ -22,3 +22,5 @@ install:
 test_script:
   - "cd csv2vcf"
   - "%PYTHON%/python.exe -m csv2vcf contact.csv"
+  - "cd VCF_CONVERT_contact"
+  - "ls"
