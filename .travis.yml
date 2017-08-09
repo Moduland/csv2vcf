@@ -1,0 +1,14 @@
+sudo: true
+
+language: python
+
+python:
+  - 3.5
+
+install:
+  - apt-get install python-tk
+  - python3 setup.py install
+
+script:
+  - cd csv2vcf
+  - python3 -m csv2vcf contact.csv
