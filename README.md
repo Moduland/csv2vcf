@@ -18,7 +18,7 @@
 
 
 <div align="center">
-<table style="border:1px solid black">
+<table align="center" style="border:1px solid black">
 <tr>
 <th>Linux</th>
 <th>Windows</th>
