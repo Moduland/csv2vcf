@@ -12,4 +12,7 @@ install:
 
 script:
   - cd csv2vcf
+  - cat contact.csv
   - python3 -m csv2vcf contact.csv
+  - cd VCF_CONVERT_contact
+  - ls
