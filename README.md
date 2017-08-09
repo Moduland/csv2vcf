@@ -3,28 +3,47 @@
 </div>
 
 <hr/>
+
+
+<div align="center">
+<h1>CSV2VCF</h1>
+	
+<p>Convert CSV File To VCF File	</p>
+<p>By <a href="www.moduland.com">Moduland Co</a></p>
+</div>	
+	
+	
+
+----------
+<div align="center">
+<table style="border:1px solid black">
+<tr>
+<th>Linux</th>
+<th>Windows</th>
+
+</tr>
+
+<tr>
+<td><a href="https://travis-ci.org/Moduland/csv2vcf"><img src="https://travis-ci.org/Moduland/csv2vcf.svg?branch=master"></a></td>
+<td> <a href="https://ci.appveyor.com/project/sepandhaghighi/csv2vcf"><img src="https://ci.appveyor.com/api/projects/status/10tg3do98auc5slo?svg=true"></a></td>
+
+</tr>	
+
+</table>
+
+</div>
 <div align="center">
 	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/quality-score.png?b=master"></a>
 	<a href="https://www.codacy.com/app/Sepand-HaghighiOrganization/csv2vcf?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Moduland/csv2vcf&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/027746c2e5b24390aed377c6e5c678ba"/></a>
-	<a href="https://scrutinizer-ci.com/g/Moduland/csv2vcf/"><img src="https://scrutinizer-ci.com/g/Moduland/csv2vcf/badges/build.png?b=master"></a>
+	
 	<a href="https://requires.io/github/Moduland/csv2vcf/requirements/?branch=master"><img src="https://requires.io/github/Moduland/csv2vcf/requirements.svg?branch=master" alt="Requirements Status" /></a>
 	<a href="https://badge.fury.io/py/csv2vcf"><img src="https://badge.fury.io/py/csv2vcf.svg" alt="PyPI version" height="18"></a>	
-
 </div>
 
-----------
 
 
-# CSV2VCF
 	
-Convert CSV File To VCF File		
 
-
-----------
-	
-By [Moduland Co](http://www.moduland.ir)		
-
-----------
 
 	
 </hr>
