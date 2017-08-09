@@ -16,24 +16,7 @@
 
 ----------		
 
-
-<div align="center">
-<table align="center" style="border:1px solid black">
-<tr>
-<th>Linux</th>
-<th>Windows</th>
-
-</tr>
-
-<tr>
-<td><a href="https://travis-ci.org/Moduland/csv2vcf"><img src="https://travis-ci.org/Moduland/csv2vcf.svg?branch=master"></a></td>
-<td> <a href="https://ci.appveyor.com/project/sepandhaghighi/csv2vcf"><img src="https://ci.appveyor.com/api/projects/status/10tg3do98auc5slo?svg=true"></a></td>
-
-</tr>	
-
-</table>
-
-</div>			
+		
 
 
 <div align="center">
@@ -79,8 +62,30 @@
 
 <div align="center">
 <img src="http://moduland.github.io/csv2vcf/images/usage.gif">
-</div>					
+</div>				
+				
+## Automated Build				
 
+
+<div align="center">
+<table align="center" style="border:1px solid black;">
+<tr>
+<th>Linux</th>
+<th>Windows</th>
+
+</tr>
+
+<tr>
+<td><a href="https://travis-ci.org/Moduland/csv2vcf"><img src="https://travis-ci.org/Moduland/csv2vcf.svg?branch=master"></a></td>
+<td> <a href="https://ci.appveyor.com/project/sepandhaghighi/csv2vcf"><img src="https://ci.appveyor.com/api/projects/status/10tg3do98auc5slo?svg=true"></a></td>
+
+</tr>	
+
+</table>
+
+</div>	
+
+			
 ## Input File Format
 
 <div align="center">
