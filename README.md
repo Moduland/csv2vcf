@@ -50,14 +50,14 @@
 
 ## Usage					
 ### GUI
-	- Enter contacts in ```.csv``` file (comma separated)
-	- Run csv2vcf ```python3 -m csv2vcf``` or ```python -m csv2vcf``` on Mac,Linux or Windows
+	- Enter contacts in `.csv` file (comma separated)
+	- Run csv2vcf `python3 -m csv2vcf` or `python -m csv2vcf` on Mac,Linux or Windows
 	- Open your csv file in application
-	- Result in ```VCF_CONVERT``` folder
+	- Result in `VCF_CONVERT` folder
 ### Command Line
-	- Enter contacts in ```.csv``` file (comma separated)
-	- Run csv2vcf with file as argument ```python3 -m csv2vcf file.csv``` or ```python -m csv2vcf file.csv``` on Mac,Linux or Windows
-	- Result in ```VCF_CONVERT``` folder
+	- Enter contacts in `.csv` file (comma separated)
+	- Run csv2vcf with file as argument `python3 -m csv2vcf file.csv` or `python -m csv2vcf file.csv` on Mac,Linux or Windows
+	- Result in `VCF_CONVERT` folder
 			
 
 <div align="center">
