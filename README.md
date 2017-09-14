@@ -38,14 +38,14 @@
 ## Installation
 ### Source Code
 - Download [Version 0.2](https://github.com/moduland/csv2vcf/archive/v0.2.zip) or [Latest Source ](https://github.com/Moduland/csv2vcf/archive/master.zip)
-
-- `python3 setup.py install` or `python setup.py install`				
+- Install python-tk `sudo apt-get update`+`sudo apt-get install python-tk`  (Need root access)
+- `python3 setup.py install` or `python setup.py install`  (Need root access)		 		
 
 ### PyPI
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- `pip install csv2vcf` or `pip3 install csv2vcf`							
+- `pip install csv2vcf` or `pip3 install csv2vcf`  (Need root access)							
 			
 
 ## Usage					
