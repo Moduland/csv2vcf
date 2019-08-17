@@ -198,7 +198,7 @@ def csv_reader(file_name,GUI=False):
     '''
     try:
         file_name=os.path.join(os.getcwd(),file_name)
-        file=open(file_name,"r")
+        file=open(file_name,"r",encoding='utf8')
         vcf_counter=0
         foldername=VCF_Folder(file_name)
         for index,line in enumerate(file):
